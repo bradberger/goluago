@@ -142,7 +142,6 @@ func toGoValue(l *lua.State, idx int) (interface{}, error) {
 	case lua.TypeTable:
 		return pullTableRec(l, idx)
 	default:
-		err := fmt.Errorf("pull table, unsupported type %s", lua.TypeNameOf(l, idx))
-		return nil, err
+		return nil, nil
 	}
 }
